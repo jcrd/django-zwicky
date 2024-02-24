@@ -1,7 +1,9 @@
-from django.urls import path
+from django.urls import include, path
 
-from .views import index
+from . import views
 
 urlpatterns = [
-    path("", index, name="index"),
+    path("", views.index, name="index"),
+    path("signup/", views.signup, name="signup"),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]
