@@ -1,0 +1,31 @@
+{% extends "_base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="w-full h-full flex justify-center items-center">
+    <form method="POST" class="flex flex-col items-center gap-4">
+        {% csrf_token %}
+        <h1 class="text-xl">Sign up</h1>
+        <label class="input input-bordered flex items-center w-full max-w-sm gap-2">
+            {{ form.username.label }}
+            {{ form.username|add_class:"border-0 w-full max-w-sm" }}
+        </label>
+        <label class="input input-bordered flex items-center w-full max-w-sm gap-2">
+            {{ form.email.label }}
+            {{ form.email|add_class:"border-0 w-full max-w-sm" }}
+        </label>
+        <label class="input input-bordered flex items-center w-full max-w-sm gap-2">
+            {{ form.password1.label }}
+            {{ form.password1|add_class:"border-0 w-full max-w-sm" }}
+        </label>
+        <label class="input input-bordered flex items-center w-full max-w-sm gap-2">
+            {{ form.password2.label }}
+            {{ form.password2|add_class:"border-0 w-full max-w-sm" }}
+        </label>
+        <button type="submit" class="btn">Sign up</button>
+        <a href="{% url 'login' %}" class="link flex justify-center">
+            Already have an account? Log in
+        </a>
+    </form>
+</div>
+{% endblock content %}

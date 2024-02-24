@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+LOGIN_REDIRECT_URL = "/"
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     "tailwind",
     "zwicky",
     "django_browser_reload",
+    "widget_tweaks",
 ]
 
 TAILWIND_APP_NAME = "zwicky"
