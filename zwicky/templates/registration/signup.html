@@ -10,19 +10,44 @@
             {{ form.username.label }}
             {{ form.username|add_class:"border-0 w-full max-w-sm" }}
         </label>
+        {% if form.username.errors %}
+        <div role="alert" class="alert alert-error">
+            {{ form.username.errors }}
+        </div>
+        {% endif %}
         <label class="input input-bordered flex items-center w-full max-w-sm gap-2">
             {{ form.email.label }}
             {{ form.email|add_class:"border-0 w-full max-w-sm" }}
         </label>
+        {% if form.email.errors %}
+        <div role="alert" class="alert alert-error">
+            {{ form.email.errors }}
+        </div>
+        {% endif %}
         <label class="input input-bordered flex items-center w-full max-w-sm gap-2">
             {{ form.password1.label }}
             {{ form.password1|add_class:"border-0 w-full max-w-sm" }}
         </label>
+        {% if form.password1.errors %}
+        <div role="alert" class="alert alert-error">
+            {{ form.password1.errors }}
+        </div>
+        {% endif %}
         <label class="input input-bordered flex items-center w-full max-w-sm gap-2">
             {{ form.password2.label }}
             {{ form.password2|add_class:"border-0 w-full max-w-sm" }}
         </label>
+        {% if form.password2.errors %}
+        <div role="alert" class="alert alert-error">
+            {{ form.password2.errors }}
+        </div>
+        {% endif %}
         <button type="submit" class="btn">Sign up</button>
+        {% if form.non_field_errors %}
+        <div role="alert" class="alert alert-error">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
         <a href="{% url 'login' %}" class="link flex justify-center">
             Already have an account? Log in
         </a>
